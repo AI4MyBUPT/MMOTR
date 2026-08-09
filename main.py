@@ -202,12 +202,12 @@ def seed_torch(seed=7):
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
 
-dataset_name = ['tcga_brca', 'tcga_gbmlgg', 'tcga_luad', 'tcga_ucec']
+dataset_name = ['tcga_ucec', 'tcga_gbmlgg', 'tcga_brca', 'tcga_luad']
 data_pathology = [
-    '/data1/fengle/extract_feature/TCGA-BRCA/feat-CTranspath-10x/',
-    '/data3/fl/extract-feature/GBMLGG-feat-10x/features-ctranspath-10x/',
-    '/data3/fl/extract-feature/LUAD-feat-10x/features-ctranspath-10x/',
     '/data3/fl/extract-feature/UCEC-feat-10x/features-ctranspath-10x/',
+    '/data3/fl/extract-feature/GBMLGG-feat-10x/features-ctranspath-10x/',
+    '/data1/fengle/extract_feature/TCGA-BRCA/feat-CTranspath-10x/',
+    '/data3/fl/extract-feature/LUAD-feat-10x/features-ctranspath-10x/',
 ]
 
 for data_index in [0]:
@@ -220,7 +220,7 @@ for data_index in [0]:
     args.model_type = 'mcsp_otmr' 
     args.g_model_type = 'OT'
     args.g_condition = True
-    args.generator = False#True #False
+    args.generator = False  # Set True for missing-genomic-modality reconstruction; set False for complete-modality training/inference.
     args.warm_epoch = 5
     args.max_epochs = 20
     args.results_dir = '/data1/fengle/paper/second/MCSP-OTMR/results'
