@@ -53,9 +53,7 @@ The OTCR module depends on the Python Optimal Transport package, imported as `ot
 The current main training entry is:
 
 ```bash
-CUDA_VISIBLE_DEVICES=<CUDA_IDX> python main.py \
-  --split_dir <TCGA_DATASET> \
-  --data_root_dir <WSI_FEATURE_DIR>
+CUDA_VISIBLE_DEVICES=<CUDA_IDX> python main.py
 ```
 
 For example, `<TCGA_DATASET>` can be `tcga_brca`, `tcga_gbmlgg`, `tcga_luad`, or `tcga_ucec`, matching the folders under `splits/5foldcv/`.
