@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+
+# Experiment outputs
+results/
+
+# Model checkpoints
+*.pth
+*.pt
+*.ckpt
+
+# Environment / secrets
+.env
