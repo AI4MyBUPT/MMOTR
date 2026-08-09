@@ -220,7 +220,7 @@ for data_index in [0]:
     args.model_type = 'mcsp_otmr' 
     args.g_model_type = 'OT'
     args.g_condition = True
-    args.generator = False  # Set True for missing-genomic-modality reconstruction; set False for complete-modality training/inference.
+    args.generator = True  # Set True for missing-genomic-modality reconstruction; set False for complete-modality training/inference.
     args.warm_epoch = 5
     args.max_epochs = 20
     args.results_dir = '/data1/MCSP-OTMR/results'
