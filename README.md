@@ -1,6 +1,6 @@
 # MCSP-OTMR
 
-Official implementation of **MCSP-OTMR: Multimodal Cancer Survival Prediction with Optimal Transport-based Missing Modality Reconstruction**.
+Official implementation of **MCSP-OTMR: Multimodal Cancer Survival Prediction Framework Based on Optimal Transport Reconstruction and Modality Reweighting**.
 
 <p align="center">
   <img src="assets/Figure_MCSP_OTMR.jpg" width="1500px" />
