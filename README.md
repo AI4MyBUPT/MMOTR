@@ -50,7 +50,7 @@ The OTCR module depends on the Python Optimal Transport package, imported as `ot
 
 ## Usage
 
-The current main training entry is:
+Experiments can be run using the following generic command-line:
 
 ```bash
 CUDA_VISIBLE_DEVICES=<CUDA_IDX> python main.py
