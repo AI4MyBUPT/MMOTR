@@ -204,10 +204,10 @@ def seed_torch(seed=7):
 
 dataset_name = ['tcga_ucec', 'tcga_gbmlgg', 'tcga_brca', 'tcga_luad']
 data_pathology = [
-    '/data3/fl/extract-feature/UCEC-feat-10x/features-ctranspath-10x/',
-    '/data3/fl/extract-feature/GBMLGG-feat-10x/features-ctranspath-10x/',
-    '/data1/fengle/extract_feature/TCGA-BRCA/feat-CTranspath-10x/',
-    '/data3/fl/extract-feature/LUAD-feat-10x/features-ctranspath-10x/',
+    '/data3/extract-feature/UCEC-features-ctranspath/',
+    '/data3/extract-feature/GBMLGG-features-ctranspath/',
+    '/data3/extract_feature/BRCA-features-CTranspath/',
+    '/data3/extract-feature/LUAD-features-ctranspath/',
 ]
 
 for data_index in [0]:
@@ -223,7 +223,7 @@ for data_index in [0]:
     args.generator = False  # Set True for missing-genomic-modality reconstruction; set False for complete-modality training/inference.
     args.warm_epoch = 5
     args.max_epochs = 20
-    args.results_dir = '/data1/fengle/paper/second/MCSP-OTMR/results'
+    args.results_dir = '/data1/MCSP-OTMR/results'
     args.weighted_sample = False
     args = get_custom_exp_code(args)
     ############
