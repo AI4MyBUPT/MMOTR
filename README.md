@@ -7,16 +7,8 @@ Official implementation of **MCSP-OTMR: Multimodal Cancer Survival Prediction wi
 </p>
 
 ## Introduction
+Multimodal data integration, particularly the joint modeling of histopathology images and genomic profiles, offers significant potential for advancing cancer survival prediction. However, several pressing challenges hinder its progress: (1) gigapixel-level whole-slide images (WSIs) contain substantial redundancy and noise, complicating discriminative feature extraction; (2) missing modalities are common in clinical settings, yet most existing models assume full data availability, limiting real-world applicability; and (3) inherent disparities in information density between pathology and genomics often lead to modality imbalance and gradient conflicts, thereby degrading model performance. To address these issues, we propose MCSP-OTMR, a novel multimodal cancer survival prediction framework based on optimal transport reconstruction and modality reweighting. Our contributions are mainly reflected in three aspects. First, we employ a differential variational information bottleneck (DVIB) module to reduce redundancy and extract discriminative features from pathological images. Second, we design a novel optimal transport-based cross-modal reconstruction (OTCR) module to align inter-modal distributions and enable semantic completion, enhancing the model's robustness to missing modalities. Third, we design a Fisher information-guided modality reweighting (FIMR) strategy that dynamically adjusts optimization gradients according to each modality's task relevance, alleviating modality imbalance and facilitating more effective joint learning. Extensive experiments on four public TCGA cancer datasets demonstrate that our method consistently surpasses state-of-the-art baselines under both complete and missing modality settings. Furthermore, interpretability analyses performed on pathological and genomic inputs reveal clinically meaningful prognostic patterns, underscoring the practical value of our approach.
 
-MCSP-OTMR integrates whole-slide image features and functional genomic signatures for multimodal cancer survival prediction. The framework supports both complete-modality inference and missing-genomic-modality inference.
-
-The method contains five main components:
-
-- **Feature Process:** WSI patch features and six functional genomic groups are encoded into compact embeddings.
-- **Compression and Diversity (DVIB):** pathology features are compressed into diverse latent pathology components.
-- **Missing Modality Reconstruction (OTCR):** optimal transport aligns pathology components with genomic components and guides missing genomic reconstruction.
-- **Feature Fusion and Prediction:** cross-attention fuses pathology and genomics, followed by modality-specific Transformer branches for survival risk prediction.
-- **Fisher Metric and Reweighting (FIMR):** Fisher information is used to monitor modality imbalance and reweight gradients during training.
 
 ## Data Preparation
 
@@ -60,7 +52,7 @@ The OTCR module depends on the Python Optimal Transport package, imported as `ot
 The current main training entry is:
 
 ```bash
-CUDA_VISIBLE_DEVICES=<CUDA_IDX> python main_fl.py \
+CUDA_VISIBLE_DEVICES=<CUDA_IDX> python main.py \
   --split_dir <TCGA_DATASET> \
   --data_root_dir <WSI_FEATURE_DIR>
 ```
